@@ -55,7 +55,7 @@ class LoginPageView extends GetView<LoginPageController> {
               Container(
                 margin: Spacing.top(40),
                 child: Text(
-                  "LOG IN !",
+                  "LOG IN12345 !",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: AppSize.size50,
