@@ -66,7 +66,7 @@ class LoginPageView extends GetView<LoginPageController> {
               Space.height(10),
               Container(
                 child: Text(
-                  "Please enter your mail and password to continue",
+                  "Pleasee enter your mail and password to continue",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: AppSize.size20,
