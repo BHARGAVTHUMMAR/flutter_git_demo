@@ -114,6 +114,40 @@ class SingupScreenView extends GetWidget<SignUpController> {
                 ),
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                    top: AppSize.getHeight(20),
+                  ),
+                  width: AppSize.getWidth(100),
+                  child: getTextField(
+                    textEditingController:
+                    controller.emailController.value,
+                    borderRadius: AppSize.size20,
+                    hintText: "+91",
+                  ),
+                ),
+                Space.width(20),
+                Container(
+                  padding: EdgeInsets.only(
+                    top: AppSize.getHeight(20),
+                  ),
+                  width: AppSize.getWidth(430),
+                  child: getTextField(
+                    textEditingController:
+                    controller.emailController.value,
+                    borderRadius: AppSize.size20,
+                    hintText: "Phone Number",
+                    validator: (input) => !isNullEmptyOrFalse(input)
+                        ? null
+                        : "Please enter Phone-Number",
+                    prefixIcon: Icon(Icons.phone),
+                  ),
+                ),
+              ],
+            ),
             Space.height(10),
             Obx(() {
               return Row(
