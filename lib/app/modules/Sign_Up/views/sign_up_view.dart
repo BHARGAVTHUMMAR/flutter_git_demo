@@ -116,45 +116,91 @@ class SingupScreenView extends GetWidget<SignUpController> {
             ),
             Space.height(10),
             Obx(() {
-              return Container(
-                padding: EdgeInsets.only(
-                  top: AppSize.getHeight(20),
-                ),
-                width: AppSize.getWidth(550),
-                child: getTextField(
-                  textEditingController:
-                  controller.passController.value,
-                  borderRadius: AppSize.size20,
-                  hintText: "Password",
-                  validator: (input) => !isNullEmptyOrFalse(input)
-                      ? null
-                      : "Please Enter Password",
-                  textVisible: controller.passwordVisible.value,
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(AppSize.size15!),
-                    child: Image(
-                      image: AssetImage("assets/ic_lock.png"),
-                      height: AppSize.size25,
-                      width: AppSize.size25,
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                      top: AppSize.getHeight(20),
                     ),
-                  ),
-                  suffixIcon: InkWell(
-                    onTap: () {
-                      controller.passwordVisible.toggle();
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.all(AppSize.size15!),
-                      child: Image(
-                        image: AssetImage(
-                            (!controller.passwordVisible.value)
-                                ? "assets/ic_eye_offf.png"
-                                : "assets/ic_eye.png"),
-                        height: AppSize.size25,
-                        width: AppSize.size30,
+                    width: AppSize.getWidth(262),
+                    child: getTextField(
+                      textEditingController:
+                      controller.passController.value,
+                      borderRadius: AppSize.size20,
+                      hintText: "Password",
+                      validator: (input) => !isNullEmptyOrFalse(input)
+                          ? null
+                          : "Please Enter Password",
+                      textVisible: controller.passwordVisible.value,
+                      prefixIcon: Padding(
+                        padding: EdgeInsets.all(AppSize.size15!),
+                        child: Image(
+                          image: AssetImage("assets/ic_lock.png"),
+                          height: AppSize.size25,
+                          width: AppSize.size25,
+                        ),
+                      ),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          controller.passwordVisible.toggle();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(AppSize.size15!),
+                          child: Image(
+                            image: AssetImage(
+                                (!controller.passwordVisible.value)
+                                    ? "assets/ic_eye_offf.png"
+                                    : "assets/ic_eye.png"),
+                            height: AppSize.size25,
+                            width: AppSize.size30,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  Space.width(20),
+                  Container(
+                    padding: EdgeInsets.only(
+                      top: AppSize.getHeight(20),
+                    ),
+                    width: AppSize.getWidth(262),
+                    child: getTextField(
+                      textEditingController:
+                      controller.passController.value,
+                      borderRadius: AppSize.size20,
+                      hintText: "Password",
+                      validator: (input) => !isNullEmptyOrFalse(input)
+                          ? null
+                          : "Please Enter Password",
+                      textVisible: controller.passwordVisible.value,
+                      prefixIcon: Padding(
+                        padding: EdgeInsets.all(AppSize.size15!),
+                        child: Image(
+                          image: AssetImage("assets/ic_lock.png"),
+                          height: AppSize.size25,
+                          width: AppSize.size25,
+                        ),
+                      ),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          controller.passwordVisible.toggle();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(AppSize.size15!),
+                          child: Image(
+                            image: AssetImage(
+                                (!controller.passwordVisible.value)
+                                    ? "assets/ic_eye_offf.png"
+                                    : "assets/ic_eye.png"),
+                            height: AppSize.size25,
+                            width: AppSize.size30,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               );
             }),
             Container(
