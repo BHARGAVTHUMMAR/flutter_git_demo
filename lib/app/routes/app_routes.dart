@@ -8,6 +8,7 @@ abstract class Routes {
   static const DASHBOARD_SCREEN = _Paths.DASHBOARD_SCREEN;
   static const SINGUP_SCREEN = _Paths.SINGUP_SCREEN;
   static const SIGN_UP = _Paths.SIGN_UP;
+  static const OTP_SCREEN = _Paths.OTP_SCREEN;
 }
 
 abstract class _Paths {

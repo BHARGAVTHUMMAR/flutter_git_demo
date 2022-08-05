@@ -20,7 +20,7 @@ class LoginPageView extends GetView<LoginPageController> {
               key: controller.formKey,
               child: Row(
                 children: [
-                  if (ResponsiveWidget.isLargeScreen(context))
+                  if (ResponsiveWidget.isSmallScreen(context))
                     Expanded(
                       child: Container(
                           decoration: BoxDecoration(
