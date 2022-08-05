@@ -9,6 +9,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.5
   dio:
+  pinput: ^2.2.12
+  google_fonts:
   get_storage:
   http:
   flutter: 

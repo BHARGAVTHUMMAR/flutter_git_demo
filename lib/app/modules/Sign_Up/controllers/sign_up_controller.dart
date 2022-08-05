@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 
 class SignUpController extends GetxController {
   //TODO: Implement SignUpController
-
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Rx<TextEditingController> firstnameController = TextEditingController().obs;
   Rx<TextEditingController> emailController = TextEditingController().obs;

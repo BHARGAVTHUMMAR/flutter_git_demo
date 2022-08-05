@@ -1,3 +1,5 @@
+import 'package:demo4444/app/modules/OTP_Screen/bindings/o_t_p_screen_binding.dart';
+import 'package:demo4444/app/modules/OTP_Screen/views/o_t_p_screen_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/Sign_Up/bindings/sign_up_binding.dart';
@@ -29,6 +31,10 @@ class AppPages {
         name: _Paths.SIGN_UP,
         page: () => const SingupScreenView(),
         binding: SignUpBinding(),
+    ),
+    GetPage(name: _Paths.OTP_SCREEN,
+        page: () => const OTPScreenView(),
+        binding: OTPScreenBinding(),
     )
   ];
 }

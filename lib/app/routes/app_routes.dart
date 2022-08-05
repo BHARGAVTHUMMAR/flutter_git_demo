@@ -17,4 +17,5 @@ abstract class _Paths {
   static const DASHBOARD_SCREEN = '/dashboard-screen';
   static const SINGUP_SCREEN = '/singup-screen';
   static const SIGN_UP = '/sign-up';
+  static const OTP_SCREEN = '/otp-screen';
 }
