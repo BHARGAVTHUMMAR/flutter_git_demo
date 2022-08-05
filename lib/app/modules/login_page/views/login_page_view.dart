@@ -1,6 +1,7 @@
 import 'package:demo4444/app/Constant/Size_Constant.dart';
 import 'package:demo4444/app/Constant/constant_color.dart';
 import 'package:demo4444/app/Constant/text_field.dart';
+import 'package:demo4444/app/modules/dashboard_screen/views/dashboard_screen_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -148,6 +149,7 @@ class LoginPageView extends GetView<LoginPageController> {
                 ),
                 child: InkWell(
                   onTap: () {
+                    Get.to(DashboardScreenView());
                     if (controller.formKey.currentState!.validate()) {
                     }
                   },
