@@ -156,14 +156,15 @@ class LoginPageView extends GetView<LoginPageController> {
                   ),
                 ),
               ),
+              Space.height(20),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Don’t have an account?",style: TextStyle(color: Colors.black),),
                   TextButton(onPressed: () {
-
-                  }, child: Text("Sing up?",style: TextStyle(color: Color(0xffc9731c)),))
+                    Get.toNamed(Routes.SIGN_UP);
+                  }, child: Text("SIGN UP",style: TextStyle(color: Color(0xffc9731c),fontSize: AppSize.size20),))
                 ],
               )
             ],
