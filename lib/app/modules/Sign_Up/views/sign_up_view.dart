@@ -5,6 +5,8 @@ import 'package:demo4444/app/modules/Sign_Up/controllers/sign_up_controller.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+
 class SingupScreenView extends GetWidget<SignUpController> {
   const SingupScreenView({Key? key}) : super(key: key);
   @override
@@ -176,6 +178,17 @@ class SingupScreenView extends GetWidget<SignUpController> {
                 ),
               ),
             ),
+            Space.height(20),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Already have an account?",style: TextStyle(color: Colors.black),),
+                TextButton(onPressed: () {
+                  Get.toNamed(Routes.LOGIN_PAGE);
+                }, child: Text("LOG IN",style: TextStyle(color: Color(0xffc9731c),fontSize: AppSize.size20),))
+              ],
+            )
           ],
         ),
       ],
