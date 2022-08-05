@@ -172,7 +172,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
                   radius: AppSize.size20!,
                   width: AppSize.getWidth(220),
                   fontWeight: FontWeight.w700,
-                  title: "LOG IN",
+                  title: "SIGN UP",
                 ),
               ),
             ),

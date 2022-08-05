@@ -1,6 +1,7 @@
 import 'package:demo4444/app/Constant/Size_Constant.dart';
 import 'package:demo4444/app/Constant/constant_color.dart';
 import 'package:demo4444/app/Constant/text_field.dart';
+import 'package:demo4444/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -43,14 +44,7 @@ class LoginPageView extends GetView<LoginPageController> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: 500,
-          height: 500,
-          // margin: Spacing.left(500),
-          decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          child: Column(
+        Column(
             children: [
               Container(
                 margin: Spacing.top(40),
@@ -162,9 +156,30 @@ class LoginPageView extends GetView<LoginPageController> {
                   ),
                 ),
               ),
+              Container(
+                //width: MySize.getWidth(550),
+                padding: EdgeInsets.only(
+                  top: AppSize.getHeight(40),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.SIGN_UP);
+                    if (controller.formKey.currentState!.validate()) {
+                    }
+                  },
+                  child: button(
+                    backgroundColor: Color(0xffc9731c),
+                    textColor: Colors.black,
+                    fontsize: AppSize.size23,
+                    radius: AppSize.size20!,
+                    width: AppSize.getWidth(220),
+                    fontWeight: FontWeight.w700,
+                    title: "SIGN UP",
+                  ),
+                ),
+              ),
             ],
           ),
-        )
       ],
     );
   }
