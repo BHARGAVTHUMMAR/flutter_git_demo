@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/dashboard_screen/bindings/dashboard_screen_binding.dart';
 import '../modules/dashboard_screen/views/dashboard_screen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -24,11 +23,6 @@ class AppPages {
       name: _Paths.LOGIN_PAGE,
       page: () => const LoginPageView(),
       binding: LoginPageBinding(),
-    ),
-    GetPage(
-      name: _Paths.DASHBOARD_SCREEN,
-      page: () => const DashboardScreenView(),
-      binding: DashboardScreenBinding(),
     ),
   ];
 }
