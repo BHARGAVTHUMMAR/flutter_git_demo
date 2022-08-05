@@ -7,7 +7,6 @@ class LoginPageController extends GetxController {
   Rx<TextEditingController> passController = TextEditingController().obs;
   RxBool isChecked = false.obs;
   RxBool passwordVisible = true.obs;
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -21,6 +20,4 @@ class LoginPageController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

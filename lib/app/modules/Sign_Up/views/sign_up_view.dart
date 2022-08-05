@@ -233,9 +233,10 @@ class SingupScreenView extends GetWidget<SignUpController> {
                 top: AppSize.getHeight(40),
               ),
               child: InkWell(
-                onTap: () {
+                onTap: () async {
                   if (controller.formKey.currentState!.validate()) {
                   }
+                  await controller.signUpApi();
                 },
                 child: button(
                   backgroundColor: Color(0xffc9731c),

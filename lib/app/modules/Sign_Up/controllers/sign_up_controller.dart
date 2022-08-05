@@ -1,5 +1,7 @@
+import 'package:demo4444/app/Constant/ConstantUrl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpController extends GetxController {
   //TODO: Implement SignUpController
@@ -15,7 +17,6 @@ class SignUpController extends GetxController {
   RxBool isChecked = false.obs;
   RxBool passwordVisible = true.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -31,5 +32,15 @@ class SignUpController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  Future<void> signUpApi() async {
+    var url = Uri.parse(baseUrl+ApiConstant.signUpUsers);
+    var response = await http.post(url, body: {'name': '${firstnameController.value.text.trim()}',
+      'mobile': '${mobileController.value.text.trim()}',
+      'countryCode': '${countryController.value.text.trim()}',
+      'email': '${emailController.value.text.trim()}',
+      'password': '${passController.value.text.trim()}'
+    });
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+  }
 }
