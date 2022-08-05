@@ -67,7 +67,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
                 ),
               ),
             ),
-            Space.height(45),
+            Space.height(20),
             Container(
               padding: EdgeInsets.only(
                 top: AppSize.getHeight(20),
@@ -75,7 +75,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
               width: AppSize.getWidth(550),
               child: getTextField(
                 textEditingController:
-                controller.emailController.value,
+                controller.firstnameController.value,
                 borderRadius: AppSize.size20,
                 hintText: "First Name",
                 validator: (input) => !isNullEmptyOrFalse(input)
@@ -84,7 +84,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(AppSize.size15!),
                   child: Image(
-                    image: AssetImage("assets/ic_mail.png"),
+                    image: AssetImage("assets/8888.png"),
                     height: AppSize.size25,
                     width: AppSize.size25,
                   ),
@@ -124,7 +124,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
                   width: AppSize.getWidth(100),
                   child: getTextField(
                     textEditingController:
-                    controller.emailController.value,
+                    controller.countryController.value,
                     borderRadius: AppSize.size20,
                     hintText: "+91",
                   ),
@@ -137,13 +137,20 @@ class SingupScreenView extends GetWidget<SignUpController> {
                   width: AppSize.getWidth(430),
                   child: getTextField(
                     textEditingController:
-                    controller.emailController.value,
+                    controller.mobileController.value,
                     borderRadius: AppSize.size20,
                     hintText: "Phone Number",
                     validator: (input) => !isNullEmptyOrFalse(input)
                         ? null
                         : "Please enter Phone-Number",
-                    prefixIcon: Icon(Icons.phone),
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(AppSize.size15!),
+                      child: Image(
+                        image: AssetImage("assets/88.png"),
+                        height: AppSize.size25,
+                        width: AppSize.size25,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -201,13 +208,12 @@ class SingupScreenView extends GetWidget<SignUpController> {
                     width: AppSize.getWidth(262),
                     child: getTextField(
                       textEditingController:
-                      controller.passController.value,
+                      controller.confirmPassController.value,
                       borderRadius: AppSize.size20,
                       hintText: "Conform Password",
                       validator: (input) => !isNullEmptyOrFalse(input)
                           ? null
                           : "Please Enter Password",
-                      textVisible: controller.passwordVisible.value,
                       prefixIcon: Padding(
                         padding: EdgeInsets.all(AppSize.size15!),
                         child: Image(
