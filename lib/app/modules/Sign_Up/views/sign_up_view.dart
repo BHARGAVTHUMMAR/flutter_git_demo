@@ -169,7 +169,7 @@ class SingupScreenView extends GetWidget<SignUpController> {
                       textEditingController:
                       controller.passController.value,
                       borderRadius: AppSize.size20,
-                      hintText: "Password",
+                      hintText: "Conform Password",
                       validator: (input) => !isNullEmptyOrFalse(input)
                           ? null
                           : "Please Enter Password",
@@ -180,22 +180,6 @@ class SingupScreenView extends GetWidget<SignUpController> {
                           image: AssetImage("assets/ic_lock.png"),
                           height: AppSize.size25,
                           width: AppSize.size25,
-                        ),
-                      ),
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          controller.passwordVisible.toggle();
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.all(AppSize.size15!),
-                          child: Image(
-                            image: AssetImage(
-                                (!controller.passwordVisible.value)
-                                    ? "assets/ic_eye_offf.png"
-                                    : "assets/ic_eye.png"),
-                            height: AppSize.size25,
-                            width: AppSize.size30,
-                          ),
                         ),
                       ),
                     ),
