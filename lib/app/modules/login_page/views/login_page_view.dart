@@ -1,11 +1,12 @@
 import 'package:demo4444/app/Constant/Size_Constant.dart';
 import 'package:demo4444/app/Constant/constant_color.dart';
 import 'package:demo4444/app/Constant/text_field.dart';
-import 'package:demo4444/app/modules/dashboard_screen/views/dashboard_screen_view.dart';
+import 'package:demo4444/app/modules/singup_screen/views/singup_screen_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/login_page_controller.dart';
 
 class LoginPageView extends GetView<LoginPageController> {
@@ -46,8 +47,7 @@ class LoginPageView extends GetView<LoginPageController> {
       children: [
         Container(
           width: 500,
-          height: 500,
-          // margin: Spacing.left(500),
+          height: 700,
           decoration: BoxDecoration(
               color: Colors.transparent,
               borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -143,13 +143,11 @@ class LoginPageView extends GetView<LoginPageController> {
                 );
               }),
               Container(
-                //width: MySize.getWidth(550),
                 padding: EdgeInsets.only(
                   top: AppSize.getHeight(40),
                 ),
                 child: InkWell(
                   onTap: () {
-                    Get.to(DashboardScreenView());
                     if (controller.formKey.currentState!.validate()) {
                     }
                   },
@@ -161,6 +159,28 @@ class LoginPageView extends GetView<LoginPageController> {
                     width: AppSize.getWidth(220),
                     fontWeight: FontWeight.w700,
                     title: "LOG IN",
+                  ),
+                ),
+              ),
+              Space.height(10),
+              Container(
+                padding: EdgeInsets.only(
+                  top: AppSize.getHeight(40),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.SINGUP_SCREEN);
+                    if (controller.formKey.currentState!.validate()) {
+                    }
+                  },
+                  child: button(
+                    backgroundColor: Color(0xffc9731c),
+                    textColor: Colors.black,
+                    fontsize: AppSize.size23,
+                    radius: AppSize.size20!,
+                    width: AppSize.getWidth(220),
+                    fontWeight: FontWeight.w700,
+                    title: "Sing Up",
                   ),
                 ),
               ),
