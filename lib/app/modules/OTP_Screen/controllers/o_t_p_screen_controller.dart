@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class OTPScreenController extends GetxController {
-  //TODO: Implement OTPScreenController
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final count = 0.obs;
   @override
