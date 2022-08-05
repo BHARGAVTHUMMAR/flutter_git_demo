@@ -1,15 +1,12 @@
 import 'package:demo4444/app/Constant/Size_Constant.dart';
 import 'package:demo4444/app/Constant/constant_color.dart';
 import 'package:demo4444/app/Constant/text_field.dart';
-import 'package:demo4444/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
+import '../controllers/singup_screen_controller.dart';
 
-import '../controllers/login_page_controller.dart';
-
-class LoginPageView extends GetView<LoginPageController> {
-  const LoginPageView({Key? key}) : super(key: key);
+class SingupScreenView extends GetWidget<SingupScreenController> {
+  const SingupScreenView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     AppSize().init(context);
@@ -25,9 +22,9 @@ class LoginPageView extends GetView<LoginPageController> {
                       child: Container(
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                            image: AssetImage("assets/bg1.jpg"),
-                            fit: BoxFit.fill,
-                          )),
+                                image: AssetImage("assets/bg1.jpg"),
+                                fit: BoxFit.fill,
+                              )),
                           child: screen()),
                     ),
                   if (ResponsiveWidget.isMediumScreen(context) ||
@@ -44,12 +41,12 @@ class LoginPageView extends GetView<LoginPageController> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Column(
+           Column(
             children: [
               Container(
                 margin: Spacing.top(40),
                 child: Text(
-                  "LOG IN!",
+                  "CREATE ACCOUNT",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: AppSize.size50,
@@ -60,7 +57,7 @@ class LoginPageView extends GetView<LoginPageController> {
               Space.height(10),
               Container(
                 child: Text(
-                  "Please enter your mail and password to continue",
+                  "Please enter your details to continue",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: AppSize.size20,
@@ -78,10 +75,33 @@ class LoginPageView extends GetView<LoginPageController> {
                   textEditingController:
                   controller.emailController.value,
                   borderRadius: AppSize.size20,
-                  hintText: "Username",
+                  hintText: "First Name",
                   validator: (input) => !isNullEmptyOrFalse(input)
                       ? null
-                      : "Check your email",
+                      : "Please enter your name",
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.all(AppSize.size15!),
+                    child: Image(
+                      image: AssetImage("assets/ic_mail.png"),
+                      height: AppSize.size25,
+                      width: AppSize.size25,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: AppSize.getHeight(20),
+                ),
+                width: AppSize.getWidth(550),
+                child: getTextField(
+                  textEditingController:
+                  controller.emailController.value,
+                  borderRadius: AppSize.size20,
+                  hintText: "Email",
+                  validator: (input) => !isNullEmptyOrFalse(input)
+                      ? null
+                      : "Please enter Mail",
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(AppSize.size15!),
                     child: Image(
@@ -93,6 +113,7 @@ class LoginPageView extends GetView<LoginPageController> {
                 ),
               ),
               Space.height(10),
+
               Obx(() {
                 return Container(
                   padding: EdgeInsets.only(
@@ -152,20 +173,10 @@ class LoginPageView extends GetView<LoginPageController> {
                     radius: AppSize.size20!,
                     width: AppSize.getWidth(220),
                     fontWeight: FontWeight.w700,
-                    title: "LOG IN",
+                    title: "SIGN UP",
                   ),
                 ),
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Don’t have an account?",style: TextStyle(color: Colors.black),),
-                  TextButton(onPressed: () {
-
-                  }, child: Text("Sing up?",style: TextStyle(color: Color(0xffc9731c)),))
-                ],
-              )
             ],
           ),
       ],
